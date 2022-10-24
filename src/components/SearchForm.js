@@ -7,10 +7,13 @@ const SearchForm = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const resultsDiv = document.getElementById('results');
+  
 
   const displayResults = (data) => {
+    resultsDiv.innerHTML = '';
     const resultsList = document.createElement('ul');
 
+    // create 'li' element for each word and insert in 'ul'
     data.forEach(wordObject => {
       const {word} = wordObject;
 
