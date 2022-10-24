@@ -6,12 +6,18 @@ const SearchForm = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  const getStringFromArray = (data) => {
-    const relatedWords = []
-      for (let i = 0; i < data.length; i++){
-        relatedWords.push(data[i].word)
-      }
-      return relatedWords.join(', ')
+  const displayResults = (data) => {
+    const resultsElement = document.createElement('ul');
+
+    data.forEach(wordObject => {
+      const {word} = wordObject;
+
+      const wordElement = document.createElement('li');
+      wordElement.innerHTML = word;
+      resultsElement.appendChild(wordElement);
+    })
+
+    document.getElementById('results').appendChild(resultsElement);
   }
   
   const fetchWords = async () => {
@@ -21,7 +27,7 @@ const SearchForm = () => {
         throw Error(response.statusText);
       }
       const data = await response.json();
-      console.log(getStringFromArray(data));
+      displayResults(data);
       
     } catch (error) { // errors from network / connection
       console.log(error.message);
@@ -48,6 +54,7 @@ const SearchForm = () => {
         />
         <button type="submit">Search</button>
       </form>
+      <div id="results"></div>
     </div>
   )
 }
