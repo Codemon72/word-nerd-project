@@ -6,6 +6,14 @@ const SearchForm = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+  const getStringFromArray = (data) => {
+    const relatedWords = []
+      for (let i = 0; i < data.length; i++){
+        relatedWords.push(data[i].word)
+      }
+      return relatedWords.join(', ')
+  }
+  
   const fetchWords = async () => {
     try {
       const response = await fetch(API_URL + searchTerm);
@@ -13,8 +21,8 @@ const SearchForm = () => {
         throw Error(response.statusText);
       }
       const data = await response.json();
-      console.log(data)
-
+      console.log(getStringFromArray(data));
+      
     } catch (error) { // errors from network / connection
       console.log(error.message);
     }
