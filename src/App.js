@@ -18,7 +18,7 @@ function App() {
     }
   };
 
-  fetchWords();
+  
 
   const [changeValue, setChangeValue] = useState('');
 
@@ -26,15 +26,23 @@ function App() {
     setChangeValue(event.target.value);
     console.log(changeValue)
   };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchWords();
+  }
 
   return (
     <div>
       <h1>Bazinga!</h1>
-      <input 
-       type="text" 
-       value={changeValue} 
-       onChange={handleInputChange} 
-      />
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text" 
+          value={changeValue} 
+          onChange={handleInputChange} 
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 }
