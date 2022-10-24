@@ -6,18 +6,20 @@ const SearchForm = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+  const resultsDiv = document.getElementById('results');
+
   const displayResults = (data) => {
-    const resultsElement = document.createElement('ul');
+    const resultsList = document.createElement('ul');
 
     data.forEach(wordObject => {
       const {word} = wordObject;
 
       const wordElement = document.createElement('li');
       wordElement.innerHTML = word;
-      resultsElement.appendChild(wordElement);
+      resultsList.appendChild(wordElement);
     })
 
-    document.getElementById('results').appendChild(resultsElement);
+    resultsDiv.appendChild(resultsList);
   }
   
   const fetchWords = async () => {
@@ -36,7 +38,6 @@ const SearchForm = () => {
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
-    console.log(searchTerm)
   };
   
   const handleSubmit = (e) => {
