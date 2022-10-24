@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 function App() {
 
-  const API_URL = "https://api.datamuse.com/words?rel_syn=example";
+  const API_URL = "https://api.datamuse.com/words?rel_syn=";
+
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchWords = async () => {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(API_URL + searchTerm);
       if (!response.ok) { // errors from server
         throw Error(response.statusText);
       }
@@ -18,13 +20,9 @@ function App() {
     }
   };
 
-  
-
-  const [changeValue, setChangeValue] = useState('');
-
   const handleInputChange = (event) => {
-    setChangeValue(event.target.value);
-    console.log(changeValue)
+    setSearchTerm(event.target.value);
+    console.log(searchTerm)
   };
   
   const handleSubmit = (e) => {
@@ -38,7 +36,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 
-          value={changeValue} 
+          value={searchTerm} 
           onChange={handleInputChange} 
         />
         <button type="submit">Search</button>
