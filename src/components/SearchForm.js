@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import MeaningLikeDisplay from './MeaningLikeDisplay';
 
 const SearchForm = () => {
+
+  console.log('SearchForm rendered');
 
   const API_URL = "https://api.datamuse.com/words?rel_syn=";
 
@@ -58,7 +61,7 @@ const SearchForm = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div id="results"></div>
+      <MeaningLikeDisplay />
     </div>
   )
 }
