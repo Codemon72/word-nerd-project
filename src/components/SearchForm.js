@@ -61,7 +61,9 @@ const SearchForm = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <DisplayField />
+      <DisplayField>
+        <div id="results"></div>
+      </DisplayField>
     </div>
   )
 }

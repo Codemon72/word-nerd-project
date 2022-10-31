@@ -1,10 +1,10 @@
 
-const DisplayField = () => {
+const DisplayField = ({children}) => {
   console.log('DisplayField rendered');
   
   return (
-    <div>
-      <div id="results"></div>
+    <div className='DisplayField'>
+      {children}
     </div>
   )
 }
