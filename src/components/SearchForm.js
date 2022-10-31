@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import MeaningLikeDisplay from './MeaningLikeDisplay';
+import DisplayField from './DisplayField';
 
 const SearchForm = () => {
 
@@ -61,7 +61,7 @@ const SearchForm = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <MeaningLikeDisplay />
+      <DisplayField />
     </div>
   )
 }
