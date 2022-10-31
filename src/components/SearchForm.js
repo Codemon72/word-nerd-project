@@ -52,7 +52,7 @@ const SearchForm = () => {
   }
 
   return (
-    <div>SearchForm
+    <div className='SearchForm'>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 

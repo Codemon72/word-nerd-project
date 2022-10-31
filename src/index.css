@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  font-size: 20px;
 }
 
 ul {
@@ -15,15 +16,36 @@ ul {
   padding: 1rem;
 }
 
+.SearchForm form {
+  border-radius: .5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.SearchForm input {
+  width: 80%;
+  border-radius: .5rem;
+  line-height: 1.5;
+  padding: .5rem;
+  font-size: 20px;
+}
+.SearchForm button {
+  background-color: #fff;
+  border-radius: .5rem;
+  padding: .5rem;
+  font-size: 20px;
+}
 .DisplayField {
   background-color: #fff;
   padding: 1rem;
   border-radius: .5rem;
-  margin: 1rem;
+  margin: 2rem;
 }
 
 /* CSS Debugger */
-* { outline: 2px dotted red }
+
+/* * { outline: 2px dotted red }
 * * { outline: 2px dotted green }
 * * * { outline: 2px dotted orange }
-* * * * { outline: 2px dotted blue }
+* * * * { outline: 2px dotted blue } */
