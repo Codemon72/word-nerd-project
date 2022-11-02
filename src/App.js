@@ -1,11 +1,14 @@
 import SearchForm from './components/SearchForm';
+import {SearchTermProvider} from './context/SearchTermContext'
 
 function App() {
   return (
-    <div>
-      <h1>The WordNerd Project! 🤓 💬</h1>
-      <SearchForm />      
-    </div>
+    <SearchTermProvider>
+      <div>
+        <h1>The Word Nerd Project! 🤓 💬</h1>
+        <SearchForm />      
+      </div>
+    </SearchTermProvider>
   );
 }
 

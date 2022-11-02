@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import DisplayField from './DisplayField';
+import SearchTermContext from '../context/SearchTermContext'
 
 const SearchForm = () => {
+
+  const { searchTerm, setSearchTerm } = useContext(SearchTermContext)
 
   console.log('SearchForm rendered');
 
   const API_URL = "https://api.datamuse.com/words?rel_syn=";
 
-  const [searchTerm, setSearchTerm] = useState('');
-
   const resultsDiv = document.getElementById('results');
   
-
   const displayResults = (data) => {
     resultsDiv.innerHTML = '';
     const resultsList = document.createElement('ul');
