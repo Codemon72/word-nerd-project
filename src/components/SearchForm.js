@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import DisplayField from './DisplayField';
 import SearchTermContext from '../context/SearchTermContext'
+import CallAPIContext from '../context/CallAPIContext'
 
 const SearchForm = () => {
 
-  const { searchTerm, setSearchTerm } = useContext(SearchTermContext)
-
   console.log('SearchForm rendered');
 
-  const API_URL = "https://api.datamuse.com/words?rel_syn=";
+  const { searchTerm, setSearchTerm } = useContext(SearchTermContext)
+  const { fetchWords } = useContext(CallAPIContext)
 
   const resultsDiv = document.getElementById('results');
   
@@ -27,20 +27,6 @@ const SearchForm = () => {
 
     resultsDiv.appendChild(resultsList);
   }
-  
-  const fetchWords = async () => {
-    try {
-      const response = await fetch(API_URL + searchTerm);
-      if (!response.ok) { // errors from server
-        throw Error(response.statusText);
-      }
-      const data = await response.json();
-      displayResults(data);
-      
-    } catch (error) { // errors from network / connection
-      console.log(error.message);
-    }
-  };
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -48,7 +34,12 @@ const SearchForm = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchWords();
+    console.log(searchTerm)
+    fetchWords(searchTerm)
+      .then((data) => {
+        displayResults(data)
+      })
+      .catch((error) => console.log(error));
   }
 
   return (
