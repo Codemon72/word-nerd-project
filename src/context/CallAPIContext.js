@@ -4,11 +4,11 @@ const CallAPIContext = createContext()
 
 export const CallAPIProvider = ({ children }) => {
 
-  const API_URL = "https://api.datamuse.com/words?rel_syn=";
+  const API_URL = "https://api.datamuse.com";
   
-  const fetchWords = async (searchTerm) => {
+  const fetchWords = async (queryString) => {
     try {
-      const response = await fetch(API_URL + searchTerm);
+      const response = await fetch(API_URL + queryString);
       if (!response.ok) { // errors from server
         throw Error(response.statusText);
       }

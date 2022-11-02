@@ -2,13 +2,15 @@ import { useContext } from 'react';
 import SearchTermContext from '../context/SearchTermContext'
 import CallAPIContext from '../context/CallAPIContext'
 
-const DisplayField = ({children}) => {
-  console.log('DisplayField rendered');
+const DisplaySynonyms = () => {
+  console.log('DisplaySynonyms rendered');
 
   const { searchTerm } = useContext(SearchTermContext)
   const { fetchWords } = useContext(CallAPIContext)
 
   const resultsDiv = document.getElementById('results');
+
+  let queryString = '/words?rel_syn=' + searchTerm
 
   const displayResults = (data) => {
     resultsDiv.innerHTML = '';
@@ -27,7 +29,7 @@ const DisplayField = ({children}) => {
   }
 
   if (searchTerm !== '') {
-    fetchWords(searchTerm)
+    fetchWords(queryString)
       .then((data) => {
         displayResults(data)
       })
@@ -36,10 +38,10 @@ const DisplayField = ({children}) => {
 
   
   return (
-    <div className='DisplayField'>
+    <div className='DisplaySynonyms'>
       <div id="results"></div>
     </div>
   )
 }
 
-export default DisplayField
+export default DisplaySynonyms
