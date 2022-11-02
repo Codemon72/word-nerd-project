@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import DisplayField from './DisplayField';
 import SearchTermContext from '../context/SearchTermContext'
 import CallAPIContext from '../context/CallAPIContext'
@@ -9,6 +9,8 @@ const SearchForm = () => {
 
   const { searchTerm, setSearchTerm } = useContext(SearchTermContext)
   const { fetchWords } = useContext(CallAPIContext)
+
+  const [inputValue, setInputValue] = useState('')
 
   const resultsDiv = document.getElementById('results');
   
@@ -29,25 +31,29 @@ const SearchForm = () => {
   }
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
+    setInputValue(event.target.value);
   };
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTerm)
+    setSearchTerm(inputValue)
+  }
+
+  useEffect(() => {
+    console.log("I was mounted and will not run again!");
     fetchWords(searchTerm)
       .then((data) => {
         displayResults(data)
       })
       .catch((error) => console.log(error));
-  }
+  }, [searchTerm]);
 
   return (
     <div className='SearchForm'>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 
-          value={searchTerm} 
+          value={inputValue} 
           onChange={handleInputChange} 
         />
         <button type="submit">Search</button>
