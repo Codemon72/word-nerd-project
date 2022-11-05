@@ -3,6 +3,7 @@ import { SearchTermProvider } from './context/SearchTermContext'
 import { CallAPIProvider } from './context/CallAPIContext'
 import DisplaySynonyms from './components/DisplaySynonyms';
 import DisplayRelatedWords from './components/DisplayRelatedWords';
+import DisplayRhymesWith from './components/DisplayRhymesWith';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <DisplaySynonyms />
         <DisplayRelatedWords />
+        <DisplayRhymesWith />
       </div>
     </CallAPIProvider>
     </SearchTermProvider>
