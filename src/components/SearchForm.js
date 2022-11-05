@@ -35,6 +35,7 @@ const SearchForm = () => {
           type="text" 
           value={inputValue} 
           onChange={handleInputChange} 
+          autoFocus
         />
         <button type="submit">Search</button>
       </form>
