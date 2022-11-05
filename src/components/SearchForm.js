@@ -1,13 +1,22 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import SearchTermContext from '../context/SearchTermContext'
 
 const SearchForm = () => {
 
   console.log('SearchForm rendered');
 
-  const { setSearchTerm } = useContext(SearchTermContext)
+  const { searchTerm, setSearchTerm } = useContext(SearchTermContext)
 
   const [inputValue, setInputValue] = useState('')
+
+  const inputElement = document.getElementById('inputElement');
+
+  useEffect(() => {
+    if (searchTerm !== '') {
+      inputElement.focus();
+      inputElement.select();
+    }
+  }, [searchTerm, inputElement]);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -22,6 +31,7 @@ const SearchForm = () => {
     <div className='SearchForm'>
       <form onSubmit={handleSubmit}>
         <input 
+          id="inputElement"
           type="text" 
           value={inputValue} 
           onChange={handleInputChange} 

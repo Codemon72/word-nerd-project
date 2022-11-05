@@ -3,6 +3,7 @@
   --base: #008080;
   --dark: #002425;
   --attention: #FF8749;
+  --attention-light: rgb(255, 135, 73, 0.3);
   --warning: #8B1C00;
 }
 *, *::before, *::after {
@@ -39,6 +40,9 @@ ul {
   padding: .5rem;
   font-size: 20px;
   border: 1px solid var(--dark);
+}
+.SearchForm input::selection {
+  background-color: var(--attention-light);
 }
 .SearchForm button {
   border: 1px solid var(--dark);
