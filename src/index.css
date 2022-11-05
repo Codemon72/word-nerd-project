@@ -36,12 +36,11 @@ ul {
   padding: .5rem;
   font-size: 20px;
 }
-.DisplaySynonyms {
+.display_container {
   background-color: #fff;
   border-radius: .5rem;
   margin: 2rem;
 }
-
 .display_heading {
   color: #fff;
   background-color: #002425;

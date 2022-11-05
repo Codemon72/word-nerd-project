@@ -2,6 +2,7 @@ import SearchForm from './components/SearchForm';
 import { SearchTermProvider } from './context/SearchTermContext'
 import { CallAPIProvider } from './context/CallAPIContext'
 import DisplaySynonyms from './components/DisplaySynonyms';
+import DisplayRelatedWords from './components/DisplayRelatedWords';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <SearchForm />      
 
         <DisplaySynonyms />
+        <DisplayRelatedWords />
       </div>
     </CallAPIProvider>
     </SearchTermProvider>

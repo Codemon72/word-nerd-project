@@ -2,15 +2,15 @@ import { useContext, useState, useEffect } from 'react';
 import SearchTermContext from '../context/SearchTermContext'
 import CallAPIContext from '../context/CallAPIContext'
 
-const DisplaySynonyms = () => {
-  console.log('DisplaySynonyms rendered');
+const DisplayRelatedWords = () => {
+  console.log('DisplayRelatedWords rendered');
 
   const { searchTerm } = useContext(SearchTermContext)
   const { fetchWords } = useContext(CallAPIContext)
 
   const [resultsArray, setResultsArray] = useState([])
 
-  let queryString = '/words?rel_syn=' + searchTerm
+  let queryString = '/words?ml=' + searchTerm
 
   useEffect(() => {
     console.log("useEffect triggered");
@@ -25,7 +25,7 @@ const DisplaySynonyms = () => {
   
   return (
     <div className='display_container'>
-      <h3 className='display_heading'>Synonyms</h3>
+      <h3 className='display_heading'>Related Words</h3>
       <ul>
       { resultsArray.length > 0 && (
           resultsArray.map((wordObject) => {
@@ -39,4 +39,6 @@ const DisplaySynonyms = () => {
   )
 }
 
-export default DisplaySynonyms
+export default DisplayRelatedWords
+ 
+
