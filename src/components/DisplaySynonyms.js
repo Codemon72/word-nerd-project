@@ -26,15 +26,15 @@ const DisplaySynonyms = () => {
   return (
     <div className='display_container'>
       <h3 className='display_heading'>Synonyms</h3>
-      <ul>
+      <div className='display_grid'>
       { resultsArray.length > 0 && (
           resultsArray.map((wordObject) => {
             return (
-              <li key={wordObject.word}>{wordObject.word}</li>
+              <span key={wordObject.word}>{wordObject.word}</span>
             );
           })
         )}
-      </ul>
+      </div>
     </div>
   )
 }

@@ -10,7 +10,7 @@ function App() {
     <SearchTermProvider>
     <CallAPIProvider>
       <div>
-        <h1>The Word Nerd Project! 🤓 💬</h1>
+        <h1><span>The Word Nerd Project!</span> <span>🤓 💬</span></h1>
         <SearchForm />      
 
         <DisplaySynonyms />

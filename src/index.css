@@ -20,10 +20,12 @@ body {
   justify-content: flex-start;
   font-size: 18px;
 }
-
-ul {
-  margin: 0 0 0 1rem;
-  padding: 1rem;
+h1 {
+  text-align: center;
+  margin: 1rem; 
+}
+h1 span {
+  display: inline-block;
 }
 
 .SearchForm form {
@@ -73,6 +75,42 @@ ul {
   padding: 1rem 0 .5rem 1.5rem;
   border-radius: .5rem .5rem 0 0;
   margin: 0;
+}
+.display_grid {
+  display: grid;
+  gap: .3em .6rem;
+  padding: 1rem;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 321px) {
+  .display_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 480px) {
+  .display_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .display_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .display_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .display_grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .display_grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
 }
 
 /* CSS Debugger */
