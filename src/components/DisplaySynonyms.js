@@ -25,6 +25,7 @@ const DisplaySynonyms = () => {
   
   return (
     <div className='DisplaySynonyms'>
+      <h3 className='display_heading'>Synonyms</h3>
       <ul>
       { resultsArray.length > 0 && (
           resultsArray.map((wordObject) => {

@@ -8,11 +8,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 ul {
-  margin: 0;
+  margin: 0 0 0 1rem;
   padding: 1rem;
 }
 
@@ -38,9 +38,16 @@ ul {
 }
 .DisplaySynonyms {
   background-color: #fff;
-  padding: 1rem;
   border-radius: .5rem;
   margin: 2rem;
+}
+
+.display_heading {
+  color: #fff;
+  background-color: #002425;
+  padding: 1rem 0 1rem 1.5rem;
+  border-radius: .5rem .5rem 0 0;
+  margin: 0;
 }
 
 /* CSS Debugger */
