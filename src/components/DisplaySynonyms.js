@@ -27,13 +27,16 @@ const DisplaySynonyms = () => {
     <div className='display_container'>
       <h3 className='display_heading'>Synonyms</h3>
       <div className='display_grid'>
-      { resultsArray.length > 0 && (
-          resultsArray.map((wordObject) => {
-            return (
-              <span key={wordObject.word}>{wordObject.word}</span>
-            );
-          })
+        { searchTerm !== '' && resultsArray.length === 0 && (
+          <i>no matches found</i>
         )}
+        { resultsArray.length > 0 && (
+            resultsArray.map((wordObject) => {
+              return (
+                <span key={wordObject.word}>{wordObject.word}</span>
+              );
+            })
+          )}
       </div>
     </div>
   )
