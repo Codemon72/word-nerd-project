@@ -9,16 +9,20 @@ const DisplaySynonyms = () => {
   const { fetchWords } = useContext(CallAPIContext)
 
   const [resultsArray, setResultsArray] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   let queryString = '/words?rel_syn=' + searchTerm
 
   useEffect(() => {
     console.log("useEffect triggered");
     if (searchTerm !== '') {
+      setResultsArray([])
+      setIsLoading(true)
       fetchWords(queryString)
         .then((data) => {
           setResultsArray(data)
         })
+        .then(() => setIsLoading(false))
         .catch((error) => console.log(error));
     }
   }, [searchTerm, fetchWords, queryString]);
@@ -27,7 +31,8 @@ const DisplaySynonyms = () => {
     <div className='display_container'>
       <h3 className='display_heading'>Synonyms</h3>
       <div className='display_grid'>
-        { searchTerm !== '' && resultsArray.length === 0 && (
+        { isLoading && (<i>Looking for matches</i>) }
+        { searchTerm !== '' && resultsArray.length === 0 && !isLoading && (
           <i>no matches found</i>
         )}
         { resultsArray.length > 0 && (
