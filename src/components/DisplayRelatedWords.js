@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import SearchTermContext from '../context/SearchTermContext'
 import CallAPIContext from '../context/CallAPIContext'
+import Display from './Display';
 
 const DisplayRelatedWords = () => {
   console.log('DisplayRelatedWords rendered');
@@ -28,19 +29,12 @@ const DisplayRelatedWords = () => {
   }, [searchTerm, fetchWords, queryString]);
   
   return (
-    <div className='display_container'>
-      <h3 className='display_heading'>Related Words</h3>
-      <div className='display_grid'>
-        { isLoading && (<i>Looking for matches</i>) }
-        { searchTerm !== '' && resultsArray.length === 0 && !isLoading && (
-          <i>no matches found</i>
-        )}
-        {resultsArray.length > 0 &&
-          resultsArray.map((wordObject) => {
-            return <span key={wordObject.word}>{wordObject.word}</span>;
-          })}
-      </div>
-    </div>
+    <Display
+      title='Related Words'
+      isLoading={isLoading}
+      searchTerm={searchTerm}
+      resultsArray={resultsArray}
+    />
   );
 }
 
