@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import SearchTermContext from '../context/SearchTermContext'
 import CallAPIContext from '../context/CallAPIContext'
+import Display from './Display';
 
 const DisplaySynonyms = () => {
   console.log('DisplaySynonyms rendered');
@@ -28,23 +29,13 @@ const DisplaySynonyms = () => {
   }, [searchTerm, fetchWords, queryString]);
   
   return (
-    <div className='display_container'>
-      <h3 className='display_heading'>Synonyms</h3>
-      <div className='display_grid'>
-        { isLoading && (<i>Looking for matches</i>) }
-        { searchTerm !== '' && resultsArray.length === 0 && !isLoading && (
-          <i>no matches found</i>
-        )}
-        { resultsArray.length > 0 && (
-            resultsArray.map((wordObject) => {
-              return (
-                <span key={wordObject.word}>{wordObject.word}</span>
-              );
-            })
-          )}
-      </div>
-    </div>
-  )
+    <Display
+      title='Synoyms'
+      isLoading={isLoading}
+      searchTerm={searchTerm}
+      resultsArray={resultsArray}
+    />
+  );
 }
 
 export default DisplaySynonyms
