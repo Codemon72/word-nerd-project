@@ -8,15 +8,17 @@ function App() {
   return (
     <SearchTermProvider>
       <div>
-        <h1><span>The Word Nerd Project!</span> <span>🤓 💬</span></h1>
-        <SearchForm />      
+        <h1>
+          <span>The Word Nerd Project!</span> <span>🤓 💬</span>
+        </h1>
+        <SearchForm />
 
         <DisplaySynonyms />
         <DisplayRelatedWords />
         <DisplayRhymesWith />
       </div>
     </SearchTermProvider>
-  );
+  )
 }
 
 export default App

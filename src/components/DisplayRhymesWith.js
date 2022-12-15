@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
 import { fetchWords } from './functions/callAPI'
-import Display from './Display';
+import Display from './Display'
 
 const DisplayRhymesWith = () => {
   console.log('DisplayRhymesWith rendered')
@@ -14,7 +14,7 @@ const DisplayRhymesWith = () => {
   let queryString = '/words?rel_rhy=' + searchTerm
 
   useEffect(() => {
-    console.log("useEffect triggered")
+    console.log('useEffect triggered')
 
     if (searchTerm !== '') {
       setResultsArray([])
@@ -27,7 +27,7 @@ const DisplayRhymesWith = () => {
         .catch((error) => console.log(error))
     }
   }, [searchTerm, queryString])
-  
+
   return (
     <Display
       title='Rhymes with ...'
@@ -35,8 +35,7 @@ const DisplayRhymesWith = () => {
       searchTerm={searchTerm}
       resultsArray={resultsArray}
     />
-  );
+  )
 }
 
 export default DisplayRhymesWith
- 

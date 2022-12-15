@@ -14,7 +14,7 @@ const DisplaySynonyms = () => {
   let queryString = '/words?rel_syn=' + searchTerm
 
   useEffect(() => {
-    console.log("useEffect triggered")
+    console.log('useEffect triggered')
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)
@@ -26,7 +26,7 @@ const DisplaySynonyms = () => {
         .catch((error) => console.log(error))
     }
   }, [searchTerm, queryString])
-  
+
   return (
     <Display
       title='Synoyms'

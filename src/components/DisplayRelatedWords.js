@@ -14,7 +14,7 @@ const DisplayRelatedWords = () => {
   let queryString = '/words?ml=' + searchTerm
 
   useEffect(() => {
-    console.log("useEffect triggered")
+    console.log('useEffect triggered')
 
     if (searchTerm !== '') {
       setResultsArray([])
@@ -27,7 +27,7 @@ const DisplayRelatedWords = () => {
         .catch((error) => console.log(error))
     }
   }, [searchTerm, queryString])
-  
+
   return (
     <Display
       title='Related Words'
@@ -35,9 +35,7 @@ const DisplayRelatedWords = () => {
       searchTerm={searchTerm}
       resultsArray={resultsArray}
     />
-  );
+  )
 }
 
 export default DisplayRelatedWords
- 
-
