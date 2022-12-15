@@ -1,13 +1,12 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
-import CallAPIContext from '../context/CallAPIContext'
+import { fetchWords } from './functions/callAPI'
 import Display from './Display'
 
 const DisplaySynonyms = () => {
   console.log('DisplaySynonyms rendered')
 
   const { searchTerm } = useContext(SearchTermContext)
-  const { fetchWords } = useContext(CallAPIContext)
 
   const [resultsArray, setResultsArray] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -26,7 +25,7 @@ const DisplaySynonyms = () => {
         .then(() => setIsLoading(false))
         .catch((error) => console.log(error))
     }
-  }, [searchTerm, fetchWords, queryString])
+  }, [searchTerm, queryString])
   
   return (
     <Display
