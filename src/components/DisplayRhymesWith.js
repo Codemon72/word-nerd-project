@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
-import { fetchWords } from './functions/callAPI'
+import { fetchFromDatamuse } from './functions/callDatamuseAPI'
 import Display from './Display'
 
 const DisplayRhymesWith = () => {
@@ -19,7 +19,7 @@ const DisplayRhymesWith = () => {
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)
-      fetchWords(queryString)
+      fetchFromDatamuse(queryString)
         .then((data) => {
           setResultsArray(data)
         })

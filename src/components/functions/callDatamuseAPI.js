@@ -1,6 +1,6 @@
 const API_URL = 'https://api.datamuse.com'
 
-export const fetchWords = async (queryString) => {
+export const fetchFromDatamuse = async (queryString) => {
   try {
     const response = await fetch(API_URL + queryString)
     if (!response.ok) {
