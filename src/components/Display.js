@@ -15,11 +15,11 @@ const Display = ({ title, isLoading, searchTerm, resultsArray }) => {
       <h3 className='display_heading'>{title}</h3>
       <div className='display_grid'>
         {isLoading && <i>Looking for matches</i>}
-        {searchTerm !== '' && resultsArray.length === 0 && !isLoading && (
+        {searchTerm !== '' && resultsArray?.length === 0 && !isLoading && (
           <i>no matches found</i>
         )}
-        {resultsArray.length > 0 &&
-          resultsArray.map((word) => {
+        {resultsArray?.length > 0 &&
+          resultsArray?.map((word) => {
             return (
               <span key={word} onDoubleClick={onDoubleClickHandler}>
                 {word}
