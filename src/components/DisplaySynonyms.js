@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
-import { fetchFromDatamuseAPI } from './functions/fetchFromDatamuseAPI'
+import { fetchFromMerrianWebsterAPI } from './functions/fetchFromMerrianWebsterAPI'
 import Display from './Display'
 
 const DisplaySynonyms = () => {
@@ -11,16 +11,15 @@ const DisplaySynonyms = () => {
   const [resultsArray, setResultsArray] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  let queryString = '/words?rel_syn=' + searchTerm
+  let queryString = searchTerm
 
   useEffect(() => {
-    console.log('useEffect triggered')
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)
-      fetchFromDatamuseAPI(queryString)
+      fetchFromMerrianWebsterAPI(queryString)
         .then((data) => {
-          setResultsArray(data)
+          setResultsArray(data[0]?.meta?.syns[0])
         })
         .then(() => setIsLoading(false))
         .catch((error) => console.log(error))

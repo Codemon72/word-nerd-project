@@ -19,10 +19,10 @@ const Display = ({ title, isLoading, searchTerm, resultsArray }) => {
           <i>no matches found</i>
         )}
         {resultsArray.length > 0 &&
-          resultsArray.map((wordObject) => {
+          resultsArray.map((word) => {
             return (
-              <span key={wordObject.word} onDoubleClick={onDoubleClickHandler}>
-                {wordObject.word}
+              <span key={word} onDoubleClick={onDoubleClickHandler}>
+                {word}
               </span>
             )
           })}

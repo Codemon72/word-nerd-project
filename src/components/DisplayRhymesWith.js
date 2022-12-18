@@ -21,7 +21,10 @@ const DisplayRhymesWith = () => {
       setIsLoading(true)
       fetchFromDatamuseAPI(queryString)
         .then((data) => {
-          setResultsArray(data)
+          const wordsArray = Array.from(data).map((wordObject) => {
+            return wordObject.word
+          })
+          setResultsArray(wordsArray)
         })
         .then(() => setIsLoading(false))
         .catch((error) => console.log(error))
