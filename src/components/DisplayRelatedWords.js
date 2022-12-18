@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
 import Display from './Display'
-import { fetchFromDatamuse } from './functions/callDatamuseAPI'
+import { fetchFromDatamuseAPI } from './functions/fetchFromDatamuseAPI'
 
 const DisplayRelatedWords = () => {
   console.log('DisplayRelatedWords rendered')
@@ -19,7 +19,7 @@ const DisplayRelatedWords = () => {
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)
-      fetchFromDatamuse(queryString)
+      fetchFromDatamuseAPI(queryString)
         .then((data) => {
           setResultsArray(data)
         })
