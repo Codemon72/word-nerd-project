@@ -18,12 +18,14 @@ const DisplaySynonyms = () => {
       setResultsArray([])
       setIsLoading(true)
       fetchFromMerrianWebsterAPI(queryString)
-        .then((data) => {
-          // todo: save against undefined
-          console.log('data: ', data)
+      .then((data) => {
+        if (data[0]?.meta?.syns[0]) {
           // todo: read out more syns arrays
           setResultsArray(data[0]?.meta?.syns[0])
-        })
+        } else {
+          setResultsArray([])
+        }
+      })
         .then(() => setIsLoading(false))
         .catch((error) => console.log(error))
     }
