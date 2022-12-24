@@ -21,7 +21,7 @@ const DisplayRelatedWords = () => {
       setIsLoading(true)
       fetchFromDatamuseAPI(queryString)
         .then((data) => {
-          const wordsArray = Array.from(data).map((wordObject) => {
+          const wordsArray = data.map((wordObject) => {
             return wordObject.word
           })
           setResultsArray(wordsArray)
