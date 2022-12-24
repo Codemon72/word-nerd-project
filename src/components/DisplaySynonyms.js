@@ -20,7 +20,6 @@ const DisplaySynonyms = () => {
       fetchFromMerrianWebsterAPI(queryString)
       .then((data) => {
         if (data[0]?.meta?.syns[0]) {
-          // todo: read out more syns arrays
           setResultsArray(data[0]?.meta?.syns[0])
         } else {
           setResultsArray([])
@@ -30,8 +29,6 @@ const DisplaySynonyms = () => {
         .catch((error) => console.log(error))
     }
   }, [searchTerm, queryString])
-
-  console.log('synonyms: ', resultsArray)
 
   return (
     <Display
