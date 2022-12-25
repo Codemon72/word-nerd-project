@@ -1,4 +1,5 @@
 import SearchForm from './components/SearchForm'
+import Dashboard from './components/Dashboard'
 import { SearchTermProvider } from './context/SearchTermContext'
 import DisplaySynonyms from './components/DisplaySynonyms'
 import DisplayRelatedWords from './components/DisplayRelatedWords'
@@ -12,7 +13,7 @@ function App() {
           <span>The Word Nerd Project!</span> <span>🤓 💬</span>
         </h1>
         <SearchForm />
-
+        <Dashboard />
         <DisplaySynonyms />
         <DisplayRelatedWords />
         <DisplayRhymesWith />

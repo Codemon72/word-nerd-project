@@ -19,6 +19,7 @@ const DisplaySynonyms = () => {
       setIsLoading(true)
       fetchFromMerrianWebsterAPI(queryString)
       .then((data) => {
+        console.log('Webster: ', data)
         if (data[0]?.meta?.syns[0]) {
           setResultsArray(data[0]?.meta?.syns[0])
         } else {
