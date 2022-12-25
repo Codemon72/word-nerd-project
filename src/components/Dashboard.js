@@ -14,12 +14,14 @@ const Dashboard = () => {
 
   const handleOptionsChange = (event) => {
     const { name, checked } = event.target
-    console.log(name, checked)
+    // console.log(name, checked)
     setDashboardOptions({ ...dashboardOptions, [name]: checked })
   }
 
   const handleShowAllOptions = (event) => {
+    console.log(event.target.checked)
     setShowAllResults(event.target.checked)
+    if (event.target.checked){setDashboardOptions(initialDashboardOptions)}
   }
 
   // toggle 'show all' option if all options are selected or not
