@@ -6,30 +6,28 @@ const Dashboard = () => {
     related: true,
     rhymes: true,
   }
-
   const [dashboardOptions, setDashboardOptions] = useState(
     initialDashboardOptions
   )
-  const [showAllResults, setShowAllResults] = useState(true)
+  const [showAllOptions, setShowAllOptions] = useState(true)
 
   const handleOptionsChange = (event) => {
     const { name, checked } = event.target
-    // console.log(name, checked)
     setDashboardOptions({ ...dashboardOptions, [name]: checked })
   }
 
   const handleShowAllOptions = (event) => {
     console.log(event.target.checked)
-    setShowAllResults(event.target.checked)
+    setShowAllOptions(event.target.checked)
     if (event.target.checked){setDashboardOptions(initialDashboardOptions)}
   }
 
-  // toggle 'show all' option if all options are selected or not
+  // toggle 'show all' checkbox if all options are selected or not
   useEffect(() => {
     if (Object.values(dashboardOptions).every((item) => item === true)) {
-      setShowAllResults(true)
+      setShowAllOptions(true)
     } else {
-      setShowAllResults(false)
+      setShowAllOptions(false)
     }
   }, [dashboardOptions])
 
@@ -38,7 +36,7 @@ const Dashboard = () => {
       <label>
         <input
           type='checkbox'
-          checked={showAllResults}
+          checked={showAllOptions}
           onChange={handleShowAllOptions}
           name='all'
         />
