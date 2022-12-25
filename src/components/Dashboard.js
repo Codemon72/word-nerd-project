@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Dashboard = () => {
   const initialDashboardOptions = {
@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [dashboardOptions, setDashboardOptions] = useState(
     initialDashboardOptions
   )
+  const [showAllResults, setShowAllResults] = useState(true)
 
   const handleOptionsChange = (event) => {
     const { name, checked } = event.target
@@ -17,8 +18,30 @@ const Dashboard = () => {
     setDashboardOptions({ ...dashboardOptions, [name]: checked })
   }
 
+  const handleShowAllOptions = (event) => {
+    setShowAllResults(event.target.checked)
+  }
+
+  // toggle 'show all' option if all options are selected or not
+  useEffect(() => {
+    if (Object.values(dashboardOptions).every((item) => item === true)) {
+      setShowAllResults(true)
+    } else {
+      setShowAllResults(false)
+    }
+  }, [dashboardOptions])
+
   return (
     <div>
+      <label>
+        <input
+          type='checkbox'
+          checked={showAllResults}
+          onChange={handleShowAllOptions}
+          name='all'
+        />
+        Show all
+      </label>
       <label>
         <input
           type='checkbox'
