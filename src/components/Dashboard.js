@@ -19,7 +19,9 @@ const Dashboard = () => {
   const handleShowAllOptions = (event) => {
     console.log(event.target.checked)
     setShowAllOptions(event.target.checked)
-    if (event.target.checked){setDashboardOptions(initialDashboardOptions)}
+    if (event.target.checked) {
+      setDashboardOptions(initialDashboardOptions)
+    }
   }
 
   // toggle 'show all' checkbox if all options are selected or not
@@ -32,7 +34,7 @@ const Dashboard = () => {
   }, [dashboardOptions])
 
   return (
-    <div>
+    <div className='Dashboard'>
       <label>
         <input
           type='checkbox'
@@ -42,33 +44,35 @@ const Dashboard = () => {
         />
         Show all
       </label>
-      <label>
-        <input
-          type='checkbox'
-          checked={dashboardOptions.synonyms}
-          onChange={handleOptionsChange}
-          name='synonyms'
-        />
-        Show synonyms
-      </label>
-      <label>
-        <input
-          type='checkbox'
-          checked={dashboardOptions.related}
-          onChange={handleOptionsChange}
-          name='related'
-        />
-        Show related
-      </label>
-      <label>
-        <input
-          type='checkbox'
-          checked={dashboardOptions.rhymes}
-          onChange={handleOptionsChange}
-          name='rhymes'
-        />
-        Show rhymes
-      </label>
+      <div className='options'>
+        <label>
+          <input
+            type='checkbox'
+            checked={dashboardOptions.synonyms}
+            onChange={handleOptionsChange}
+            name='synonyms'
+          />
+          Show synonyms
+        </label>
+        <label>
+          <input
+            type='checkbox'
+            checked={dashboardOptions.related}
+            onChange={handleOptionsChange}
+            name='related'
+          />
+          Show related
+        </label>
+        <label>
+          <input
+            type='checkbox'
+            checked={dashboardOptions.rhymes}
+            onChange={handleOptionsChange}
+            name='rhymes'
+          />
+          Show rhymes
+        </label>
+      </div>
     </div>
   )
 }
