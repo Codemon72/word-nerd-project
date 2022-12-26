@@ -35,7 +35,6 @@ h1 span {
   display: flex;
   justify-content: center;
   margin: 2rem;
-  box-shadow: var(--box-shadow);
 }
 .SearchForm input {
   width: 80%;
@@ -44,12 +43,14 @@ h1 span {
   padding: .5rem;
   font-size: 20px;
   border: 1px solid var(--dark);
+  box-shadow: var(--box-shadow);
 }
 .SearchForm input::selection {
   background-color: var(--attention-light);
 }
 .SearchForm button {
   border: 1px solid var(--dark);
+  box-shadow: var(--box-shadow);
 }
 .SearchForm input:focus,
 .SearchForm button:focus {
@@ -72,7 +73,7 @@ h1 span {
   margin: 2rem;
   padding: .5rem 1rem;
   outline: 3px solid var(--dark);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow), 4px 4px 4px rgba(0, 0, 0, 0.15) inset;
 }
 .Dashboard .options {
   margin-top: .5rem;
