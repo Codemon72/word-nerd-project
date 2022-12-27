@@ -157,7 +157,9 @@ h1 span {
     grid-template-columns: repeat(7, 1fr);
   }
 }
-
+.hidden {
+  display: none;
+}
 /* CSS Debugger */
 
 /* * { outline: 2px dotted red }

@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
+import DisplayContext from '../context/DisplayContext'
 import Display from './Display'
 import { fetchFromDatamuseAPI } from './functions/fetchFromDatamuseAPI'
 
@@ -7,6 +8,7 @@ const DisplayRelatedWords = () => {
   console.log('DisplayRelatedWords rendered')
 
   const { searchTerm } = useContext(SearchTermContext)
+  const { dashboardOptions } = useContext(DisplayContext)
 
   const [resultsArray, setResultsArray] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -37,6 +39,7 @@ const DisplayRelatedWords = () => {
       isLoading={isLoading}
       searchTerm={searchTerm}
       resultsArray={resultsArray}
+      displayed={dashboardOptions.related}
     />
   )
 }
