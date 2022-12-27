@@ -1,14 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import DisplayContext from '../context/DisplayContext'
 
 const Dashboard = () => {
-  const initialDashboardOptions = {
-    synonyms: true,
-    related: true,
-    rhymes: true,
-  }
-  const [dashboardOptions, setDashboardOptions] = useState(
-    initialDashboardOptions
-  )
+  const { dashboardOptions, setDashboardOptions, initialDashboardOptions } =
+    useContext(DisplayContext)
+
   const [showAllOptions, setShowAllOptions] = useState(true)
 
   const handleOptionsChange = (event) => {
