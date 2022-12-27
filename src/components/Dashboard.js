@@ -52,7 +52,7 @@ const Dashboard = () => {
             onChange={handleOptionsChange}
             name='synonyms'
           />
-          Show synonyms
+          Show Synonyms
         </label>
         <label>
           <input
@@ -61,7 +61,7 @@ const Dashboard = () => {
             onChange={handleOptionsChange}
             name='related'
           />
-          Show related
+          Show Related Words
         </label>
         <label>
           <input
@@ -70,7 +70,7 @@ const Dashboard = () => {
             onChange={handleOptionsChange}
             name='rhymes'
           />
-          Show rhymes
+          Show Rhymes
         </label>
       </div>
     </div>
