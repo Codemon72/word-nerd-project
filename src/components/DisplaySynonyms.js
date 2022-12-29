@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
-import DisplayContext from '../context/DisplayContext'
 import { fetchFromMerrianWebsterAPI } from './functions/fetchFromMerrianWebsterAPI'
 import Display from './Display'
 
@@ -8,7 +7,6 @@ const DisplaySynonyms = () => {
   console.log('DisplaySynonyms rendered')
 
   const { searchTerm } = useContext(SearchTermContext)
-  const { dashboardOptions } = useContext(DisplayContext)
 
   const [resultsArray, setResultsArray] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -38,7 +36,6 @@ const DisplaySynonyms = () => {
       isLoading={isLoading}
       searchTerm={searchTerm}
       resultsArray={resultsArray}
-      displayed={dashboardOptions.synonyms}
     />
   )
 }

@@ -11,7 +11,7 @@ const Display = ({ title, isLoading, searchTerm, resultsArray, displayed }) => {
   }
 
   return (
-    <div className={`display_container ${displayed ? '' : 'hidden'}`}>
+    <div className='display_container'>
       <h3 className='display_heading'>{title}</h3>
       <div className='display_grid'>
         {isLoading && <i>Looking for matches</i>}
