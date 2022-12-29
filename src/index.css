@@ -3,7 +3,7 @@
   --base: #008080;
   --dark: #002425;
   --attention: #FF8749;
-  --attention-light: rgb(255, 135, 73, 0.3);
+  --attention-light: rgb(255, 135, 73, 0.2);
   --warning: #8B1C00;
   --box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +20,9 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-size: 18px;
+}
+button {
+  cursor: pointer;
 }
 h1 {
   text-align: center;
@@ -40,10 +43,14 @@ h1 span {
   width: 80%;
   border-radius: .5rem;
   line-height: 1.5;
-  padding: .5rem;
+  padding: .5rem 1rem;
   font-size: 20px;
   border: 1px solid var(--dark);
   box-shadow: var(--box-shadow);
+}
+.SearchForm input::placeholder {
+  font-style: italic;
+  font-size: 18px;
 }
 .SearchForm input::selection {
   background-color: var(--attention-light);
