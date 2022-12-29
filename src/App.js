@@ -2,9 +2,7 @@ import { SearchTermProvider } from './context/SearchTermContext'
 import { DisplayProvider } from './context/DisplayContext'
 import SearchForm from './components/SearchForm'
 import Dashboard from './components/Dashboard'
-import DisplaySynonyms from './components/DisplaySynonyms'
-import DisplayRelatedWords from './components/DisplayRelatedWords'
-import DisplayRhymesWith from './components/DisplayRhymesWith'
+import DisplaysContainer from './components/DisplaysContainer'
 
 function App() {
   return (
@@ -16,9 +14,7 @@ function App() {
           </h1>
           <SearchForm />
           <Dashboard />
-          <DisplaySynonyms />
-          <DisplayRelatedWords />
-          <DisplayRhymesWith />
+          <DisplaysContainer />
         </div>
       </DisplayProvider>
     </SearchTermProvider>
