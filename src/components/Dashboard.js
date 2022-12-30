@@ -13,7 +13,6 @@ const Dashboard = () => {
   }
 
   const handleShowAllOptions = (event) => {
-    console.log(event.target.checked)
     setShowAllOptions(event.target.checked)
     if (event.target.checked) {
       setDashboardOptions(initialDashboardOptions)

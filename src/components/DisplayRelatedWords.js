@@ -4,8 +4,6 @@ import Display from './Display'
 import { fetchFromDatamuseAPI } from './functions/fetchFromDatamuseAPI'
 
 const DisplayRelatedWords = () => {
-  console.log('DisplayRelatedWords rendered')
-
   const { searchTerm } = useContext(SearchTermContext)
 
   const [resultsArray, setResultsArray] = useState([])
@@ -14,8 +12,6 @@ const DisplayRelatedWords = () => {
   let queryString = '/words?ml=' + searchTerm
 
   useEffect(() => {
-    console.log('useEffect triggered')
-
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)

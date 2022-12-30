@@ -2,8 +2,6 @@ import { useContext, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
 
 const SearchForm = () => {
-  console.log('SearchForm rendered')
-
   const { inputValue, setInputValue, searchTerm, setSearchTerm } =
     useContext(SearchTermContext)
 

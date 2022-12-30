@@ -1,26 +1,29 @@
 import { useContext, useState, useEffect } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
-import { fetchFromDatamuseAPI } from './functions/fetchFromDatamuseAPI'
+import { fetchFromMerrianWebsterAPI } from './functions/fetchFromMerrianWebsterAPI'
 import Display from './Display'
 
-const DisplayRhymesWith = () => {
+const DisplaySynonymsbyMW = () => {
   const { searchTerm } = useContext(SearchTermContext)
 
   const [resultsArray, setResultsArray] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  let queryString = '/words?rel_rhy=' + searchTerm
+  let queryString = searchTerm
 
   useEffect(() => {
     if (searchTerm !== '') {
       setResultsArray([])
       setIsLoading(true)
-      fetchFromDatamuseAPI(queryString)
+      fetchFromMerrianWebsterAPI(queryString)
         .then((data) => {
-          const wordsArray = data.map((wordObject) => {
-            return wordObject.word
-          })
-          setResultsArray(wordsArray)
+          if (data[0]?.meta?.syns[0]) {
+            setResultsArray(data[0]?.meta?.syns[0])
+            console.log(data[0]?.shortdef)
+            console.log(data[0]?.def[0]?.sseq[0][0][1].dt[0][1])
+          } else {
+            setResultsArray([])
+          }
         })
         .then(() => setIsLoading(false))
         .catch((error) => console.log(error))
@@ -29,7 +32,7 @@ const DisplayRhymesWith = () => {
 
   return (
     <Display
-      title='Rhymes with ...'
+      title='Synoyms from Merriam Webster'
       isLoading={isLoading}
       searchTerm={searchTerm}
       resultsArray={resultsArray}
@@ -37,4 +40,4 @@ const DisplayRhymesWith = () => {
   )
 }
 
-export default DisplayRhymesWith
+export default DisplaySynonymsbyMW

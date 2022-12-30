@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import DisplayContext from '../context/DisplayContext'
-import DisplaySynonyms from './DisplaySynonyms'
+import DisplaySynonymsbyMW from './DisplaySynonymsbyMW'
+import DisplaySynonymsbyDM from './DisplaySynonymsbyDM'
 import DisplayRelatedWords from './DisplayRelatedWords'
 import DisplayRhymesWith from './DisplayRhymesWith'
 
@@ -8,7 +9,8 @@ const DisplaysContainer = () => {
   const { dashboardOptions } = useContext(DisplayContext)
   return (
     <div>
-      {dashboardOptions.synonyms && <DisplaySynonyms />}
+      {dashboardOptions.synonyms && <DisplaySynonymsbyMW />}
+      <DisplaySynonymsbyDM />
       {dashboardOptions.related && <DisplayRelatedWords />}
       {dashboardOptions.rhymes && <DisplayRhymesWith />}
     </div>
