@@ -5,4 +5,5 @@ It is still under construction but already live at https://word-nerd-project.net
 
 ### APIs used
 
-[Merrian Webster](https://dictionaryapi.com/products/api-collegiate-thesaurus) for the synonyms and [Datamuse](https://www.datamuse.com/api/) for related words and rhymes.
+- [Merrian Webster](https://dictionaryapi.com/products/api-collegiate-thesaurus) 
+- [Datamuse](https://www.datamuse.com/api/)

@@ -19,8 +19,6 @@ const DisplaySynonymsbyMW = () => {
         .then((data) => {
           if (data[0]?.meta?.syns[0]) {
             setResultsArray(data[0]?.meta?.syns[0])
-            console.log(data[0]?.shortdef)
-            console.log(data[0]?.def[0]?.sseq[0][0][1].dt[0][1])
           } else {
             setResultsArray([])
           }
