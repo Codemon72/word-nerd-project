@@ -9,8 +9,8 @@ const DisplaysContainer = () => {
   const { dashboardOptions } = useContext(DisplayContext)
   return (
     <div>
-      {dashboardOptions.synonyms && <DisplaySynonymsbyMW />}
-      <DisplaySynonymsbyDM />
+      {dashboardOptions.synonymsMW && <DisplaySynonymsbyMW />}
+      {dashboardOptions.synonymsDM && <DisplaySynonymsbyDM />}
       {dashboardOptions.related && <DisplayRelatedWords />}
       {dashboardOptions.rhymes && <DisplayRhymesWith />}
     </div>

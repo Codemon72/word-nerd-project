@@ -4,7 +4,8 @@ const DisplayContext = createContext()
 
 export const DisplayProvider = ({ children }) => {
   const initialDashboardOptions = {
-    synonyms: true,
+    synonymsMW: true,
+    synonymsDM: true,
     related: true,
     rhymes: true,
   }

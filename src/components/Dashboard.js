@@ -43,11 +43,20 @@ const Dashboard = () => {
         <label>
           <input
             type='checkbox'
-            checked={dashboardOptions.synonyms}
+            checked={dashboardOptions.synonymsMW}
             onChange={handleOptionsChange}
-            name='synonyms'
+            name='synonymsMW'
           />
-          Show Synonyms
+          Synonyms from Merriam Webster
+        </label>
+        <label>
+          <input
+            type='checkbox'
+            checked={dashboardOptions.synonymsDM}
+            onChange={handleOptionsChange}
+            name='synonymsDM'
+          />
+          Synonyms from Datamuse
         </label>
         <label>
           <input
@@ -56,7 +65,7 @@ const Dashboard = () => {
             onChange={handleOptionsChange}
             name='related'
           />
-          Show Related Words
+          Related Words
         </label>
         <label>
           <input
@@ -65,7 +74,7 @@ const Dashboard = () => {
             onChange={handleOptionsChange}
             name='rhymes'
           />
-          Show Rhymes
+          Rhymes
         </label>
       </div>
     </div>
