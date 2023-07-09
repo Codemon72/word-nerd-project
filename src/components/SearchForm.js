@@ -8,6 +8,7 @@ const SearchForm = () => {
   const inputElement = document.getElementById('inputElement')
 
   useEffect(() => {
+    // When the searchTerm changes and is not empty, focus on the input element and select its contents
     if (searchTerm !== '') {
       inputElement.focus()
       inputElement.select()
@@ -15,11 +16,13 @@ const SearchForm = () => {
   }, [searchTerm, inputElement])
 
   const handleInputChange = (event) => {
+    // Update the inputValue state with the new value from the input element
     setInputValue(event.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // Set the searchTerm state with the inputValue when the form is submitted
     setSearchTerm(inputValue)
   }
 
