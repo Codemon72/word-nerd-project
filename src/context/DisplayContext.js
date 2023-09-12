@@ -7,7 +7,7 @@ export const DisplayProvider = ({ children }) => {
     synonymsMW: true,
     synonymsDM: true,
     related: true,
-    rhymes: true,
+    rhymes: true
   }
   const [dashboardOptions, setDashboardOptions] = useState(
     initialDashboardOptions

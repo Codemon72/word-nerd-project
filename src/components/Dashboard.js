@@ -18,7 +18,7 @@ const Dashboard = () => {
       setDashboardOptions(initialDashboardOptions)
     }
   }
-  
+
   // select single options
   const handleOptionsChange = (event) => {
     const { name, checked } = event.target

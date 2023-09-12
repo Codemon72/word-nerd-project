@@ -13,7 +13,7 @@ const DisplaySynonymsbyMW = () => {
 
   useEffect(() => {
     if (searchTerm !== '') {
-       // Reset the results array and set loading state to true
+      // Reset the results array and set loading state to true
       setResultsArray([])
       setIsLoading(true)
 
@@ -29,9 +29,9 @@ const DisplaySynonymsbyMW = () => {
             setResultsArray([])
           }
         })
-        .then(() => setIsLoading(false))  // Set loading state to false after fetching and updating the results
+        .then(() => setIsLoading(false)) // Set loading state to false after fetching and updating the results
         .catch((error) => console.log(error)) // Handle any errors during the API fetch
-      }
+    }
   }, [searchTerm, queryString])
 
   return (
