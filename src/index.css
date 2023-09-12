@@ -56,8 +56,13 @@ h1 span {
   background-color: var(--attention-light);
 }
 .SearchForm button {
+  background-color: #fff;
   border: 1px solid var(--dark);
+  border-radius: .5rem;
+  font-size: 20px;
+  padding: .5rem;
   box-shadow: var(--box-shadow);
+  margin-left: .5rem;
 }
 .SearchForm input:focus,
 .SearchForm button:focus {
@@ -67,12 +72,6 @@ h1 span {
 .SearchForm button:focus {
   outline: 2px solid var(--attention);
   outline-offset: -2px;
-}
-.SearchForm button {
-  background-color: #fff;
-  border-radius: .5rem;
-  padding: .5rem;
-  font-size: 20px;
 }
 .Dashboard {
   background-color: #fff;
