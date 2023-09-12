@@ -27,11 +27,12 @@ button {
   cursor: pointer;
 }
 h1 {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
   margin: 1rem;
-}
-h1 span {
-  display: inline-block;
+  text-align: center;
 }
 
 .SearchForm form {
