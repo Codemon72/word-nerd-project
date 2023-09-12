@@ -11,8 +11,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -103,8 +101,8 @@ h1 {
   transition: box-shadow 0.25s;
   background: lightgrey;
   cursor: pointer;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 .Dashboard input:checked {
   box-shadow: inset 0 0 0 9px #008080;
