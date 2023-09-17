@@ -8,14 +8,14 @@ function App() {
   return (
     <SearchTermProvider>
       <DisplayProvider>
-        <div>
+        <main>
           <h1>
             <span>The Word Nerd Project!</span> <span>🤓 💬</span>
           </h1>
           <SearchForm />
           <Dashboard />
           <DisplaysContainer />
-        </div>
+        </main>
       </DisplayProvider>
     </SearchTermProvider>
   )
