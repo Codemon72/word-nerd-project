@@ -140,7 +140,6 @@ h1 {
   margin: 2rem 0;
   box-shadow: var(--box-shadow);
   min-width: 300px;
-  max-height: 700px;
   overflow: hidden;
 }
 .display_heading {
@@ -154,6 +153,7 @@ h1 {
   gap: 0.3em 0.6rem;
   padding: 1rem;
   grid-template-columns: 1fr;
+  max-height: 894px;
 }
 @media only screen and (min-width: 480px) {
   .display_grid {
