@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import SearchTermContext from '../context/SearchTermContext'
 
-const Display = ({ title, isLoading, searchTerm, resultsArray, displayed }) => {
+const Display = ({ title, isLoading, searchTerm, resultsArray }) => {
   const { setSearchTerm, setInputValue } = useContext(SearchTermContext)
 
   function onDoubleClickHandler(e) {

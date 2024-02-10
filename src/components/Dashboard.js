@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 import DisplayContext from '../context/DisplayContext'
 
-// Select which results to display
-// Options: synonyms from Merriam Webster, Datamuse, Related Words, Words that rhyme with query
+// Select which query results to display
+// Options: synonyms from Merriam Webster, Datamuse, Related Words, Words that rhyme with query word
 // Default: all selected
 const Dashboard = () => {
   const { dashboardOptions, setDashboardOptions, initialDashboardOptions } =
